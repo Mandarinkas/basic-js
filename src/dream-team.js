@@ -13,10 +13,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam(/* members */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-}
+
+  // throw new NotImplementedError('Not implemented');
+  function createDreamTeam(arr) {
+    if(!Array.isArray(arr)){
+      return false;
+    }
+    else{
+    let result = '';
+    arr.forEach(elem => {
+      if (typeof elem =='string'){
+        elem = elem.split(' ').join('');
+          result+=elem[0];
+      }
+    });
+    return result.toUpperCase().split('').sort().join('');
+  }}
+
 
 module.exports = {
   createDreamTeam
